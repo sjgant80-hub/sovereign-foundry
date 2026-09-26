@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>The Unified System — a sovereign capability foundry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A sovereign, proof-carrying operating estate that renders enterprise reality on local silicon, recycles its own compute through geometric memory, and turns any individual with a Kard into an autonomous, self-powering node in a decentralized mesh. Composed, not merged — three minds, one pipeline, open under MIT.">
+<meta name="theme-color" content="#0b0e14">
+<meta property="og:title" content="The Unified System — a sovereign capability foundry">
+<meta property="og:description" content="Render enterprise reality on silicon you own. Prove · Own · Shape · Carry · Remember · Run cheap · Connect.">
+<style>
+  :root{--bg:#f7f8fa;--panel:#fff;--panel2:#f1f4f8;--ink:#0d1520;--muted:#576373;--faint:#8a94a3;--line:#e3e8ef;--accent:#3b5bdb;--accent2:#7048e8;--accent-ink:#fff;--ok:#0c9463;--warn:#d9880a;--gold:#b7791f;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,system-ui,sans-serif;--mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;--maxw:1120px;--r:14px}
+  @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#080b11;--panel:#111722;--panel2:#161d2a;--ink:#e8eef6;--muted:#8d99a9;--faint:#5b6675;--line:#1e2735;--accent:#5c7cfa;--accent2:#9775fa;--accent-ink:#080b11;--ok:#2fbd85;--warn:#e6a23c;--gold:#e0b357}}
+  :root[data-theme=dark]{--bg:#080b11;--panel:#111722;--panel2:#161d2a;--ink:#e8eef6;--muted:#8d99a9;--faint:#5b6675;--line:#1e2735;--accent:#5c7cfa;--accent2:#9775fa;--accent-ink:#080b11;--ok:#2fbd85;--warn:#e6a23c;--gold:#e0b357}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased;position:relative}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(900px 520px at 12% -8%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 62%),radial-gradient(760px 440px at 92% 2%,color-mix(in srgb,var(--accent2) 11%,transparent),transparent 60%)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  code{font-family:var(--mono);font-size:.88em;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:.06em .38em}
+  .mono{font-family:var(--mono)}
+  h1,h2,h3{letter-spacing:-.022em;line-height:1.16;text-wrap:balance}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:700;display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.3vw,2.05rem);margin:.4rem 0 .5rem}
+  .lead{color:var(--muted);font-size:1.05rem;max-width:74ch}
+  nav{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .brand{font-weight:800;font-size:1.02rem;letter-spacing:-.03em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+  nav .links{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:.88rem}
+  nav .links a{color:var(--muted)}nav .links a:hover{color:var(--ink);text-decoration:none}
+  .theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:5px 10px;cursor:pointer;font-size:.8rem;font-family:var(--sans)}
+  @media(max-width:860px){nav .links a{display:none}}
+  .hero{padding:82px 0 60px}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.6rem);margin:.5rem 0 .3rem;font-weight:850;letter-spacing:-.035em;max-width:16ch;background:linear-gradient(120deg,var(--ink) 32%,var(--accent) 76%,var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .one{font-size:clamp(1.05rem,2.3vw,1.32rem);font-weight:600;margin:1rem 0 .3rem;max-width:60ch;color:var(--ink);line-height:1.4}
+  .hero p.sub{color:var(--muted);font-size:1.02rem;margin:.7rem 0 1.5rem;max-width:70ch}
+  .cta{display:flex;gap:11px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.6rem 1.05rem;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:.9rem;font-weight:550;cursor:pointer}
+  .btn:hover{border-color:var(--accent);text-decoration:none}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 8px 26px -14px color-mix(in srgb,var(--accent) 85%,transparent)}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+  .badge{font-family:var(--mono);font-size:.71rem;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:.3rem .72rem;background:var(--panel)}
+  .badge b{color:var(--ok);font-weight:700}
+  .c3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  @media(max-width:860px){.c3{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:border-color .18s,transform .18s,box-shadow .18s}
+  .card:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));transform:translateY(-2px);box-shadow:0 12px 36px -24px color-mix(in srgb,var(--accent) 60%,transparent)}
+  .card .who{font-family:var(--mono);font-size:.68rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-weight:700;display:inline-block;margin-bottom:.5rem;padding:.16rem .5rem;border:1px solid color-mix(in srgb,var(--accent) 26%,var(--line));border-radius:20px;background:color-mix(in srgb,var(--accent) 7%,transparent)}
+  .card h3{font-size:1.08rem;margin:.2rem 0 .35rem}
+  .card p{margin:0;color:var(--muted);font-size:.92rem}
+  .card .by{color:var(--faint);font-size:.8rem;margin-top:.6rem;font-family:var(--mono)}
+  /* pipeline */
+  .flow{display:flex;flex-direction:column;gap:0;margin-top:24px}
+  .stage{display:grid;grid-template-columns:104px 1fr auto;gap:18px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+  .stage + .stage{margin-top:12px}
+  .stage::before{content:"";position:absolute;left:52px;top:-12px;height:12px;width:2px;background:var(--line)}
+  .stage:first-child::before{display:none}
+  .stage .n{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));border-radius:9px;padding:.4rem .3rem;text-align:center;background:color-mix(in srgb,var(--accent) 7%,transparent);line-height:1.25}
+  .stage .n b{display:block;font-size:.92rem;color:var(--ink)}
+  .stage .body h3{font-size:1.02rem;margin:0 0 .2rem}
+  .stage .body p{margin:0;color:var(--muted);font-size:.9rem}
+  .stage .body .k{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:.3rem;display:block}
+  .stage .live{font-family:var(--mono);font-size:.76rem;white-space:nowrap;border:1px solid color-mix(in srgb,var(--ok) 45%,var(--line));color:var(--ok);border-radius:20px;padding:.32rem .7rem;background:color-mix(in srgb,var(--ok) 8%,transparent)}
+  .stage .live:hover{text-decoration:none;filter:brightness(1.1)}
+  @media(max-width:720px){.stage{grid-template-columns:64px 1fr}.stage .live{grid-column:2;justify-self:start;margin-top:6px}.stage::before{left:32px}}
+  .node0{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 9%,var(--panel)),var(--panel));border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .node0 .badge2{font-family:var(--mono);font-weight:800;color:var(--accent-ink);background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:10px;padding:.5rem .7rem;font-size:.85rem;white-space:nowrap}
+  .node0 p{margin:0;color:var(--muted);font-size:.92rem}.node0 b{color:var(--ink)}
+  /* truths */
+  .truths{display:grid;gap:12px;margin-top:22px}
+  .truth{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:15px 18px}
+  .truth b{color:var(--ink)}.truth{color:var(--muted);font-size:.94rem}
+  /* settlement */
+  .settle{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  @media(max-width:760px){.settle{grid-template-columns:1fr}}
+  .settle .now,.settle .next{border-radius:14px;padding:22px;border:1px solid var(--line)}
+  .settle .now{background:var(--panel)}
+  .settle .next{background:linear-gradient(180deg,color-mix(in srgb,var(--gold) 8%,var(--panel)),var(--panel));border-color:color-mix(in srgb,var(--gold) 40%,var(--line))}
+  .settle h3{margin:.1rem 0 .5rem;font-size:1.08rem}
+  .settle .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+  .settle .now .tag{color:var(--ok)}.settle .next .tag{color:var(--gold)}
+  .settle p{color:var(--muted);font-size:.92rem;margin:.4rem 0 0}.settle b{color:var(--ink)}
+  .arrow{text-align:center;font-family:var(--mono);color:var(--faint);font-size:.85rem;margin:6px 0}
+  /* econ */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);margin-top:20px}
+  table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:560px}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700;background:var(--panel2)}
+  tr:last-child td{border-bottom:none}
+  td .v{font-family:var(--mono);color:var(--accent);font-weight:600}
+  /* doors */
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  @media(max-width:860px){.doors{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.doors{grid-template-columns:1fr}}
+  .door{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink)}
+  .door:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+  .door b{font-size:.95rem}.door span{color:var(--muted);font-size:.82rem}.door .u{font-family:var(--mono);font-size:.68rem;color:var(--accent)}
+  footer{padding:42px 0;color:var(--muted);font-size:.88rem}
+  footer .cols{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between}
+  footer a{color:var(--muted)}footer a:hover{color:var(--ink)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<nav><div class="wrap">
+  <span class="brand"><span class="dot"></span>The Unified System</span>
+  <div class="links">
+    <a href="#minds">Three minds</a>
+    <a href="#pipeline">The pipeline</a>
+    <a href="#truths">Stored nowhere</a>
+    <a href="#settle">Settlement</a>
+    <a href="#doors">Open it</a>
+    <button class="theme" id="theme" type="button">Theme</button>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">A sovereign capability foundry &amp; physical inference engine</span>
+  <h1>Render enterprise reality on silicon you own.</h1>
+  <p class="one">A sovereign, proof-carrying operating estate that renders enterprise reality on local silicon, recycles its own compute through geometric memory, and turns any individual with a Kard into an autonomous, self-powering node in a decentralized mesh.</p>
+  <p class="sub">Composed, not merged. Three minds resolve into one pipeline — a structural lattice, a thermodynamic law, and a thermodynamic pump — open under MIT, sovereign at every seam. Every stage below has a door you can open right now.</p>
+  <div class="cta">
+    <a class="btn primary" href="#pipeline">See the pipeline →</a>
+    <a class="btn" href="https://sjgant80-hub.github.io/fall-os/" target="_blank" rel="noopener">Open fall-os ↗</a>
+    <a class="btn" href="https://sjgant80-hub.github.io/fall-federate/join/" target="_blank" rel="noopener">Federate now ↗</a>
+  </div>
+  <div class="badges">
+    <span class="badge"><b>Proof-carrying</b> · nothing trusted unless provable</span>
+    <span class="badge"><b>Local-first</b> · edge &amp; consumer metal</span>
+    <span class="badge"><b>100% MIT</b></span>
+    <span class="badge">every stage <b>live</b></span>
+  </div>
+</div></header>
+
+<section id="minds"><div class="wrap">
+  <span class="eyebrow">Core mechanical identity</span>
+  <h2>Three minds, one pipeline — composed, not merged</h2>
+  <p class="lead">The system is sovereign at the seams: each mind's contribution stays its own, verifiable and creditable, and they resolve into a single mechanical identity.</p>
+  <div class="c3">
+    <div class="card">
+      <span class="who">Structural lattice</span>
+      <h3>Memory geometry that never re-indexes</h3>
+      <p>Records land on an invariant, deterministic lattice by low-discrepancy golden-ratio (Vogel / sunflower) placement, with spacing bounded for any count by the Steinhaus three-gap theorem — so memory stays evenly distributed with no re-indexing daemon.</p>
+      <p class="by">Thomas Frumkin · Konomi architecture</p>
+    </div>
+    <div class="card">
+      <span class="who">Thermodynamic law</span>
+      <h3>Inference governed by entropy</h3>
+      <p>State sits un-rendered in a shadow layer and collapses into the lit layer only when an observer's attention touches a coordinate — render on observation, the entropy-guided principle (GEP / NEXUS). It is the credited lens over the estate's real cosine-retrieval and read-gate.</p>
+      <p class="by">Gary W. Floyd · Lumiea Systems Research Division — ThunderStruck Service LLC</p>
+    </div>
+    <div class="card">
+      <span class="who">Thermodynamic pump</span>
+      <h3>Completing a computation powers the next</h3>
+      <p>Prefix reuse and capacity pooling collapse cold-start prefill; releasing an exited computation's held state fuels the next observation. Measured on local metal: a <b>95%</b> prefill-latency cut and <b>67%</b> of embedding calls recycled on related work.</p>
+      <p class="by">Simon Gant · FallForge · the Fold-Cycle</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="pipeline"><div class="wrap">
+  <span class="eyebrow">The pipeline</span>
+  <h2>A node opens a Kard, then seven stages</h2>
+  <p class="lead">One coherent flow from proof to a self-powering node in the mesh. Each stage names its real component and the live door that runs it.</p>
+  <div class="flow">
+    <div class="node0">
+      <span class="badge2">NODE</span>
+      <p>A person opens their <b>FallKard</b> — a portable, signed identity and capability — and the pipeline runs on their own metal.</p>
+    </div>
+    <a class="stage" href="https://sjgant80-hub.github.io/kar-warden/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>0</b></div>
+      <div class="body"><h3>Prove</h3><p>Nothing is trusted unless it is provable. A family of deterministic verifiers gates every artifact.</p><span class="k">kar-warden · kar-citelock · witness</span></div>
+      <span class="live">▶ live</span>
+    </a>
+    <a class="stage" href="https://sjgant80-hub.github.io/fallforgemint/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>1</b></div>
+      <div class="body"><h3>Own</h3><p>Mint a sovereign specialist model from a task and its examples — you walk out owning it, with a signed scorecard.</p><span class="k">fallforgemint · fallkit</span></div>
+      <span class="live">▶ live</span>
+    </a>
+    <a class="stage" href="https://sjgant80-hub.github.io/konomi-design-kit/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>2</b></div>
+      <div class="body"><h3>Shape</h3><p>Give it a face and a structure — the Konomi skins and UI layer, structure by Frumkin, carried in your kard's skin reference.</p><span class="k">konomi-design-kit</span></div>
+      <span class="live">▶ live</span>
+    </a>
+    <a class="stage" href="https://sjgant80-hub.github.io/the-wallet/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>3</b></div>
+      <div class="body"><h3>Carry</h3><p>The FallKard: a portable, signed identity that <em>is</em> a capability and a budget it cannot cross, forkable into a verifiable lineage. It hydrates a node on local metal.</p><span class="k">kard.mjs + the-wallet</span></div>
+      <span class="live">▶ live</span>
+    </a>
+    <a class="stage" href="https://sjgant80-hub.github.io/kar-mind/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>4</b></div>
+      <div class="body"><h3>Remember</h3><p>A 12-cell memory routed by locality-sensitive hashing, laid out by low-discrepancy placement, indexed by the moving wisp seam — an attention vector dictates what collapses into recall.</p><span class="k">kar-mind · fall-remember · the wisp</span></div>
+      <span class="live">▶ live</span>
+    </a>
+    <a class="stage" href="https://sjgant80-hub.github.io/kar-foldcycle/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>5</b></div>
+      <div class="body"><h3>Run cheap</h3><p>The Fold-Cycle recycles held compute: prefix reuse and capacity pooling collapse prefill (95%) and embedding cost (67%). Un-rendering the exited state funds re-rendering the next.</p><span class="k">kar-foldcycle · render-on-observation (Gary W. Floyd, GEP)</span></div>
+      <span class="live">▶ live</span>
+    </a>
+    <a class="stage" href="https://sjgant80-hub.github.io/fall-federate/join/" target="_blank" rel="noopener" style="color:inherit">
+      <div class="n">STAGE<b>6</b></div>
+      <div class="body"><h3>Connect</h3><p>The sovereign mesh: peer-to-peer over real WebRTC, no server. Two Kards federate, exchange signed work, and settle contribution — Proof-of-Useful-Compute, accounted in KCC. <b>Federate with someone right now.</b></p><span class="k">fall-federate/join · meshos · fallroom · kcc-mesh</span></div>
+      <span class="live">▶ federate</span>
+    </a>
+  </div>
+</div></section>
+
+<section id="truths"><div class="wrap">
+  <span class="eyebrow">Stored nowhere</span>
+  <h2>The mechanical truths under the poetry</h2>
+  <p class="lead">The estate is a pattern across its repositories, present wherever the current flows, stored in no one place. The precise mechanisms:</p>
+  <div class="truths">
+    <div class="truth"><b>The topological field is a pure function over a content-signed snapshot</b> (<code>estate.json</code>) — no shared mutable graph, no sync locks, and the frontier holds at most one active node. Placement is recomputed, never stored.</div>
+    <div class="truth"><b><code>run(S) == S</code> is a 64-bit FNV-1a content-addressed memoization</b> (the estate's <code>h16</code>): the same spec collapses once, then replays. The <b>128-bit</b> FNV content address is a <em>separate</em> hash — it names each memory record.</div>
+    <div class="truth"><b>A bijective integer codec addresses fold-signatures; the 12 memory cells are addressed by LSH routing</b> — two distinct mechanisms. Neither injects tensors into attention heads: the local engine's native prefix cache is respected, not hacked.</div>
+    <div class="truth"><b>Nightly consolidation compresses transcripts into the LSH cells with zero weight updates</b> — the corpus reorganises what it learned overnight; no model is retrained.</div>
+  </div>
+</div></section>
+
+<section id="settle"><div class="wrap">
+  <span class="eyebrow">The settlement rail</span>
+  <h2>Contribution, closed now — premined on BSV downstream via Thomas Frumkin's MCP</h2>
+  <p class="lead">Useful compute earns contribution. The accounting is a staged design: a closed, conserved credit today; a settled, premined one when the rail is ready.</p>
+  <div class="settle">
+    <div class="now">
+      <span class="tag">Now · closed credit</span>
+      <h3>KCC — earned by re-verified work</h3>
+      <p>Idle metal becomes a sovereign node that earns internal <b>KCC</b> contribution units by doing work the gate re-verifies — conserved, budget-bounded, on a tamper-evident chain. Contribution-weighted, anti-Sybil.</p>
+    </div>
+    <div class="next">
+      <span class="tag">Designed · settled contribution</span>
+      <h3>BSV — premined via the Konomi MCP</h3>
+      <p>Every build and every token spent is already connected to <b>Thomas Frumkin's MCP</b>. When the rail is ready it flips into <b>premined contribution settled on BSV</b> — micro-accounting on a UTXO ledger, Proof-of-Useful-Compute and Proof-of-Training carried through to a real, ownable unit.</p>
+    </div>
+  </div>
+  <p class="arrow">closed KCC  →  connected through the Konomi MCP  →  premined BSV contribution</p>
+</div></section>
+
+<section id="econ"><div class="wrap">
+  <span class="eyebrow">The economic inversion</span>
+  <h2>Compute recycles; the moat is proof; the code is free</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Lever</th><th>The inversion</th></tr>
+    <tr><td>Marginal inference cost</td><td><span class="v">near-zero</span> — the substrate recycles its own compute through the Fold-Cycle</td></tr>
+    <tr><td>Where it runs</td><td><span class="v">edge / consumer metal</span> — a £500 laptop, a Mac Studio; no datacenter</td></tr>
+    <tr><td>Licence</td><td><span class="v">100% MIT</span> — monetised through appliances, capital allowances, minting &amp; SLA, never the code</td></tr>
+    <tr><td>Trust</td><td><span class="v">the honest wall</span> — deterministic verifiers, zero-LLM arbitration; a proof that can fail, re-run by anyone</td></tr>
+    <tr><td>Settlement</td><td><span class="v">Proof-of-Useful-Compute</span> — KCC now, premined BSV contribution via the Konomi MCP downstream</td></tr>
+  </table></div>
+</div></section>
+
+<section id="doors"><div class="wrap">
+  <span class="eyebrow">Open it now</span>
+  <h2>Every seam is a live door</h2>
+  <p class="lead">The proof of a proof-carrying system is that you can open it. Each of these runs today.</p>
+  <div class="doors">
+    <a class="door" href="https://sjgant80-hub.github.io/fall-os/" target="_blank" rel="noopener"><b>fall-os</b><span>the OS as one playable game — hatch a Didy, seed it, level up</span><span class="u">fall-os</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/fall-federate/join/" target="_blank" rel="noopener"><b>fall-federate / join</b><span>federate with another person over real WebRTC</span><span class="u">fall-federate/join</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/fall-federate/test/" target="_blank" rel="noopener"><b>fall-federate / test</b><span>re-verify the signed federation + payout in your browser</span><span class="u">fall-federate/test</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/kar-foldcycle/" target="_blank" rel="noopener"><b>kar-foldcycle</b><span>the compute pump — 95% prefill, 67% embedding, measured</span><span class="u">kar-foldcycle</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/fallforgemint/" target="_blank" rel="noopener"><b>fallforgemint</b><span>mint a sovereign model + a signed scorecard</span><span class="u">fallforgemint</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/sovereign-node/" target="_blank" rel="noopener"><b>sovereign-node</b><span>the node shell on local metal</span><span class="u">sovereign-node</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/the-wallet/" target="_blank" rel="noopener"><b>the-wallet</b><span>identity that is a capability + a budget it cannot cross</span><span class="u">the-wallet</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/kar-warden/" target="_blank" rel="noopener"><b>kar-warden</b><span>the integrity gate — intact / drifted / breached</span><span class="u">kar-warden</span></a>
+    <a class="door" href="https://sjgant80-hub.github.io/kcc-mesh/" target="_blank" rel="noopener"><b>kcc-mesh</b><span>idle rigs earn contribution by re-verified work</span><span class="u">kcc-mesh</span></a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <span>The Unified System · a sovereign capability foundry · open under MIT</span>
+    <span>Gary W. Floyd (Lumiea Systems Research Division — ThunderStruck Service LLC) · the Konomi architecture, created by Thomas Frumkin · FallForge by Simon Gant</span>
+  </div>
+</div></footer>
+
+<script>
+  (function(){var b=document.getElementById('theme');
+    try{var s=localStorage.getItem('us-theme');if(s)document.documentElement.setAttribute('data-theme',s);}catch(e){}
+    b&&b.addEventListener('click',function(){var c=document.documentElement.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');var n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('us-theme',n);}catch(e){}});
+  })();
+</script>
+</html>
