@@ -2,7 +2,7 @@
 
 > A sovereign, proof-carrying operating estate that renders enterprise reality on local silicon, recycles its own compute through geometric memory, and turns any individual with a Kard into an autonomous, self-powering node in a decentralized mesh. Composed, not merged — open under MIT.
 
-Three minds resolve into one pipeline: a structural lattice (Thomas Frumkin / Konomi — low-discrepancy golden-ratio memory placement), a thermodynamic law (Gary W. Floyd, Lumiea Systems Research Division — ThunderStruck Service LLC — inference governed by entropy, render on observation, GEP/NEXUS), and a thermodynamic pump (Simon Gant / FallForge — the Fold-Cycle recycles held compute: 95% prefill, 67% embedding). A node opens a FallKard, then seven stages: Prove, Own, Shape, Carry, Remember, Run cheap, Connect. Contribution is a closed KCC credit now, designed to settle as premined contribution on BSV via Thomas Frumkin's MCP downstream. Every stage has a live door.
+Three minds resolve into one pipeline: a structural lattice (Thomas Frumkin / Konomi — low-discrepancy golden-ratio memory placement), a thermodynamic law (Gary W. Floyd, Lumiea Systems Research Division — ThunderStruck Service LLC — inference governed by entropy, render on observation, GEP/NEXUS), and a thermodynamic pump (Simon Gant / FallForge — the Fold-Cycle recycles held compute: 95% prefill, 67% embedding). A node opens a FallKard, then seven stages: Prove, Own, Shape, Carry, Remember, Run cheap, Connect. Contribution is recorded on a signed, hash-chained, conserved ledger — closed internal accounting, no money out. Every stage has a live door.
 
 ## Live doors
 - fall-os — https://sjgant80-hub.github.io/fall-os/
