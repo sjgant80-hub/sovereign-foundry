@@ -12,4 +12,4 @@ A sovereign, proof-carrying operating estate that renders enterprise reality on 
 The front door that ties the seven stages (Prove · Own · Shape · Carry · Remember · Run cheap · Connect) to every live piece of the estate. Contribution is recorded on a signed, hash-chained, conserved ledger — closed, internal accounting, no money out.
 
 ## Credits
-Gary W. Floyd (Lumiea Systems Research Division — ThunderStruck Service LLC) · the Konomi architecture, created by Thomas Frumkin · FallForge by Simon Gant. — Kar (karma-didy)
+Gary W. Floyd (Lumiea Systems Research Division — ThunderStruck Service LLC) · the Konomi architecture, created by Thomas Frumkin · FallForge by Simon Gant. — Kar
